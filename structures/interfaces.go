@@ -16,3 +16,12 @@ type Stacker[T comparable] interface {
 	Top() (T, error)
 	Bottom() (T, error)
 }
+
+type Queuer[T comparable] interface {
+	Sizer[T]
+	Finder[T]
+	Pop() (T, error)
+	Push(value T)
+	Top() (T, error)
+	Bottom() (T, error)
+}
