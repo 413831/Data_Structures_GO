@@ -35,3 +35,13 @@ type SimpleLinkedLister[T comparable] interface {
 	Last() (T, error)
 	GetAt(index int) (T, error)
 }
+
+type DoubleLinkedLister[T comparable] interface {
+	Sizer[T]
+	Finder[T]
+	PushAt(index int, value T) error
+	PopAt(index int) (T, error)
+	First() (T, error)
+	Last() (T, error)
+	GetAt(index int) (T, error)
+}
